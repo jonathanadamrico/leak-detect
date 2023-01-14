@@ -73,7 +73,7 @@ def detect_vertical_leakage_from_to(data_creation_func, input_data, input_featur
         input_data.loc[start:end-1, input_feature_cols] = np.nan
     else:
         for col in input_feature_cols:
-            input_data.loc[start:end-1, col] = input_data.loc[start:end-1, col].apply(lambda x: np.complex(x + 1j))
+            input_data.loc[start:end-1, col] = input_data.loc[start:end-1, col].apply(lambda x: np.complex_(x + 1j))
 
     input_data_feats_null = data_creation_func(input_data)
     if not use_nan:
@@ -206,7 +206,7 @@ def detect_horizontal_leakage_from_to(data_creation_func, input_data, leakage_fr
         input_data.loc[:, leakage_from_cols] = np.nan
     else:
         for col in leakage_from_cols:
-            input_data.loc[:, col] = input_data[col].apply(lambda x: np.complex(x + 1j))
+            input_data.loc[:, col] = input_data[col].apply(lambda x: np.complex_(x + 1j))
 
     input_data_feats_null = data_creation_func(input_data)
     if not use_nan:
