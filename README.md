@@ -66,3 +66,10 @@ Returns:
     has_leakage (boolean): True if leakage is happening from 'target_cols' to 'output_feature_cols' or from
         'input_feature_cols' to 'target_cols'.
 ```
+
+
+### Installation of this fork
+
+```
+pip install -e git+https://github.com/jonathanadamrico/leak-detect#egg=leak-detect
+```
